@@ -23,6 +23,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path(
         "api/v1/cinema/",
-        include("cinema.urls",namespace="cinema")
+        include("cinema.urls", namespace="cinema")
     )
 ]

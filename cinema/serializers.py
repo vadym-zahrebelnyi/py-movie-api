@@ -18,5 +18,3 @@ class MovieSerializer(serializers.Serializer):
 
         instance.save()
         return instance
-
-

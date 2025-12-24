@@ -8,13 +8,13 @@ from cinema.serializers import MovieSerializer
 
 
 class MovieListAPIView(APIView):
-    # noinspection PyMethodMayBeStatic
+    #  noinspection PyMethodMayBeStatic
     def get(self, request): # noqa: U100
         movies = Movie.objects.all()
         serializer = MovieSerializer(movies, many=True)
         return Response(serializer.data)
 
-    # noinspection PyMethodMayBeStatic
+    #  noinspection PyMethodMayBeStatic
     def post(self, request): # noqa: U100
         serializer = MovieSerializer(data=request.data)
         if serializer.is_valid():
@@ -30,7 +30,7 @@ class MovieListAPIView(APIView):
 
 
 class MovieDetailAPIView(APIView):
-    # noinspection PyMethodMayBeStatic
+    #  noinspection PyMethodMayBeStatic
     def get_object(self, pk): # noqa: U100
         return get_object_or_404(Movie, pk=pk)
 
